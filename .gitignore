@@ -1,0 +1,51 @@
+# PHP specific
+vendor/
+composer.phar
+composer.lock
+*.log
+.env
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.tmp
+
+# Cache and logs
+/cache/
+/logs/
+*.cache
+
+# Database configuration and local config files
+config.local.php
+database.php
+*.sql
+
+# Dependency directories
+node_modules/
+bower_components/
+
+# Build directories
+/build/
+/dist/
+/public/assets/
+
+# Test coverage
+/coverage/
+/phpunit.xml
+
+# Other
+*.bak
+*.zip
+*.tar.gz
