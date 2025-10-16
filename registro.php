@@ -2,12 +2,14 @@
 require 'config.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $usuario = $_POST['usuario'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $nombre = $_POST['nombre'] ?? '';
-    $apellidoPat = $_POST['apellidoPat'] ?? '';
-    $apellidoMat = $_POST['apellidoMat'] ?? '';
-    $ci = $_POST['ci'] ?? '';
+    $data = json_decode(file_get_contents('php://input'), true);
+    
+    $usuario = $data['usuario'] ?? '';
+    $password = $data['password'] ?? '';
+    $nombre = $data['nombre'] ?? '';
+    $apellidoPat = $data['apellidoPat'] ?? '';
+    $apellidoMat = $data['apellidoMat'] ?? '';
+    $ci = $data['ci'] ?? '';
 
     if(empty($usuario) || empty($password)){
         echo json_encode(["success" => false, "message" => "Usuario y contraseña son obligatorios"]);

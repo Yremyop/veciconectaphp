@@ -2,8 +2,9 @@
 require 'config.php';
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $usuario = $_POST['usuario'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $data = json_decode(file_get_contents('php://input'), true);
+    $usuario = $data['usuario'] ?? '';
+    $password = $data['password'] ?? '';
 
     if(empty($usuario) || empty($password)){
         echo json_encode(["success" => false, "message" => "Usuario y contraseña son obligatorios"]);
